@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+"use strict";
 import './App.css';
+import Row from './Row';
+import React, { useEffect } from 'react';
 
 function App() {
+  
+  useEffect(() => {
+    const cells = document.getElementsByClassName("cell");
+    let randomClass;
+
+    for(let cell of cells){
+      randomClass = Math.random() * 4;
+      randomClass = Math.round(randomClass);
+      cell.classList = "cell";
+      if(randomClass === 0){
+        cell.classList.add("tl");
+      }else if(randomClass === 1){
+        cell.classList.add("tr");
+      }else if(randomClass === 2){
+        cell.classList.add("bl");
+      }else if(randomClass === 3){
+        cell.classList.add("br");
+      }else if(randomClass === 4){
+        cell.classList.add("all");
+      }
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <main className='panel'>
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+      </main> 
     </div>
   );
 }

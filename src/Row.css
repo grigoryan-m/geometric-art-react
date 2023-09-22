@@ -1,0 +1,26 @@
+.row{
+    display: flex;
+    width: 350px;
+    justify-content: center;
+    gap: 10px;
+  }
+.cell{
+    width: 90px;
+    height: 90px;
+    background-color: lightcoral;
+}
+.tl{
+    border-top-left-radius: 100px;
+}
+.tr{
+    border-top-right-radius: 100px;
+}
+.bl{ 
+    border-bottom-left-radius: 100px;
+}
+.br{
+    border-bottom-right-radius: 100px;
+}
+.all{
+    border-radius: 100px;
+}
