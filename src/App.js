@@ -9,6 +9,8 @@ function App() {
     const cells = document.getElementsByClassName("cell");
     const generateButton = document.getElementById("generateButton");
 
+    const colors = ['#C83E4D', '#F4B860', '#F4D6CC', '#4A5859', '#F37748', '#ECC30B'];
+    
     const generate = function(){
       for(let cell of cells){
         let randomClass = Math.random() * 4;
@@ -26,7 +28,7 @@ function App() {
           cell.classList.add("all");
         }
 
-        randomClass = Math.random() * 4;
+        cell.style.backgroundColor = colors[Math.round(Math.random() * 6)];
       }
     }
 
